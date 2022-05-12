@@ -1,9 +1,6 @@
 package dataalgs;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class DuplicateCharsInWord {
 
@@ -22,19 +19,23 @@ public class DuplicateCharsInWord {
     }
 
     //time complexity for findDuplicatesUsingFor is 0(n)
-    private static Collection<Character> findDuplicatesUsingMap(String words) {
+    private static Set<Character> findDuplicatesUsingMap(String word) {
         Set<Character> duplicates = new LinkedHashSet<>();
         HashMap<Character, Integer> countMap= new HashMap<Character, Integer>();
-
-        for(int i=0; words.length(); i++) {
-            if(countMap.containsKey(words.charAt(i))) {
-                countMap.put(words.charAt(i),countMap.get(words.charAt(i))+1);
+        for(int i=0; i<word.length(); i++) {
+            if(countMap.containsKey(word.charAt(i))) {
+                countMap.put(word.charAt(i),countMap.get(word.charAt(i))+1);
             } else {
-                countMap.put(words.charAt(i),1);
+                countMap.put(word.charAt(i),1);
             }
 
         }
-        return null;
+        for(Map.Entry<Character, Integer> entry: countMap.entrySet()) {
+            if(entry.getValue() >1) {
+                duplicates.add(entry.getKey());
+            }
+        }
+        return duplicates;
     }
 
     //time complexity for findDuplicatesUsingFor is 0(n2)
@@ -49,7 +50,7 @@ public class DuplicateCharsInWord {
     }
 
     //space complexity for findDuplicatesUsingArrays is 0(n)
-    private static Collection<Character> findDuplicatesUsingArrays(String word) {
+    private static Set<Character> findDuplicatesUsingArrays(String word) {
     Set<Character> duplicates=new LinkedHashSet<>();
 
     int[] arrayforChar=new int[255];

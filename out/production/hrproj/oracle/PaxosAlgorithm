@@ -1,0 +1,30 @@
+Tune in
+You may also wish to watch lectures on coding concepts and distributed systems topics. Our engineers recommend:
+• REST API best practices (various sources on the web).
+• Paxos algorithm: https://www.youtube.com/watch?v=WX4gjowx45E
+• CAP theorem and NOSQL: https://www.youtube.com/watch?v=LW8MBYU_pzQ
+• Martin Fowler’s talk on Intro to NoSQL: https://www.youtube.com/watch?v=qI_g07C_Q5I
+• MIT OCW Introduction to Algorithms: https://ocw.mit.edu/courses/electrical-engineering-and-computerscience/6-006-introduction-to-algorithms-fall-2011 (thevideo lectures are excellent)
+
+
+• Paxos algorithm: (Lamport 1988 - Part tie parliament)
+
+Problem         Assumptions     Paxos
+
+Reliable computing systems out of unreliable component
+
+
+CAP Theorem
+
+Consistency , Availability, Partition Tolerance
+
+write -> DB -> DB <- Read
+
+Partition - sync between the DBs (DB node pods are not in sync due to network / hardware issues)
+
+
+
+
+
+
+
